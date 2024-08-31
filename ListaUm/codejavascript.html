@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Números Aleatórios</title>
+</head>
+<body>
+    <h1>Gerador de Números Aleatórios (oi daniell)</h1>
+
+    <label for="min">Valor Mínimo:</label>
+    <input type="number" id="min">
+
+    <label for="max">Valor Máximo:</label>
+    <input type="number" id="max">
+
+    <button onclick="gerarNumero()">Gerar Número</button>
+
+    <h2>Número Gerado: <span id="numeroGerado"></span></h2>
+
+    <script>
+        function gerarNumeroAleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function gerarNumero() {
+            const min = parseInt(document.getElementById('min').value);
+            const max = parseInt(document.getElementById('max').value);
+
+            const numeroGerado = gerarNumeroAleatorio(min, max);
+            document.getElementById('numeroGerado').textContent = numeroGerado;
+        }
+    </script>
+</body>
+</html>
+
